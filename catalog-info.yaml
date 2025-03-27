@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hz2ir6nag-nodejs-gitops
+  description: This is GitOps manifest for hz2ir6nag-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=hz2ir6nag-nodejs
+    backstage.io/kubernetes-id: hz2ir6nag-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: hz2ir6nag-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:hz2ir6nag-nodejs
